@@ -18,7 +18,7 @@ axios.get(url)
 
 
 //POST
-const createNewUsers = () =>{
+const createNewUsers = data =>{
     axios.post(url, data)
     .then(res => {
       console.log(res.data)
@@ -30,11 +30,20 @@ const createNewUsers = () =>{
 
 //DELETE
 
+const deleteUserById = id => {
+    const urlDelete = `${url}${id}/`
+    axios.delete(urlDelete)
+      .then(res => getAllUsers())
+      .catch(err => console.log(err))
+  }
+
 //UPDATE
 
 return {
     users, 
-    getAllUsers
+    getAllUsers,
+    createNewUsers,
+    deleteUserById
 }
 
 }
