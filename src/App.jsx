@@ -1,14 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
+import useUserCrud from './hooks/useUserCrud,js'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
+
+const {
+  users, 
+  getAllUsers,
+  createNewUsers,
+  deleteUserById,
+  updateUserById
+} = useUserCrud()
+
+
+useEffect(() => {
+  getAllUsers()
+}, [])
+
 
   return (
     <div className="App">
-      <h1>Entregable 4</h1>
+      <h1>Users</h1>
+      <div>
+        {
+          users?.map(user => (
+              <UsersCard
+              key={user.id}
+              user={user}
+
+              />
+          ))
+        }
+      </div>
     </div>
   )
 }
