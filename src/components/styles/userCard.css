@@ -1,0 +1,81 @@
+.user {
+    border: 0.05em solid grey;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.4em;
+    padding: 1.5em 1em;
+    background-color:white;
+    transition: transform 200ms ease;
+}
+
+.user:hover{
+transform: scale(1.03);
+}
+
+.user__name{
+font-weight: 500;
+font-size: 1.1rem;
+margin-bottom: 1em;
+}
+
+.user__list{
+    display: grid;
+    gap: 0.5em;
+}
+
+.user__item{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.user__label{
+    font-size: 0.7rem;
+    color: gray;
+    text-transform: uppercase;
+    position: relative;
+    left: 0.5rem;
+}
+
+.user__value{
+    font-size: 0.8rem;
+}
+
+
+.userFooter{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.user__btn{
+    width: 2em;
+    aspect-ratio: 1;
+    border-radius: 0.4em;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.user__btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 0.2em black;
+    filter: brightness(1.1em);
+}  
+
+.user__delete{
+    color: white;
+    background-color: var(--deleteColor);
+
+}
+
+.user__update{
+    color: grey;
+    border: 0.05em solid currentColor;
+
+}
+
+
+
+.user__icon{
+    font-size: 1rem;
+}

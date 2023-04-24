@@ -20,11 +20,11 @@ axios.get(url)
 
 
 //POST
-const createNewUsers = data =>{
+const createNewUsers = data => {
     axios.post(url, data)
     .then(res => {
-      console.log(res.data)
-      getAllUsers()
+    console.log(res.data)
+    getAllUsers()
     })
     .catch(err => console.log(err))
 }
@@ -41,17 +41,18 @@ const deleteUserById = id => {
 
 //UPDATE
 
-const updateUserById = (data, id) => {
+const updateUserById = (id, data) => {
     const urlUpdate = `${url}${id}/`
     axios.patch(urlUpdate, data)
-      .then(res => getAllUsers())
-      .catch(err => console.log(err))
-  }
+    .then(res => getAllUsers())
+    .catch(err => console.log(err))
+}
 
 
 
 
 return {
+
     users, 
     getAllUsers,
     createNewUsers,

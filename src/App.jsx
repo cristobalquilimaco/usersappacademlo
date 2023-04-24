@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import useUserCrud from './hooks/useUserCrud,js'
+import useUserCrud from './hooks/useUserCrud.js'
+import UsersCard from './components/UsersCard'
+import FormUsers from './components/FormUsers'
+import defaultValues from './utils/defaultValues'
+
 
 function App() {
 
+const [updateInfo, setUpdateInfo] = useState()
+const [isClose, setisClose] = useState(true)
 
 
 const {
@@ -16,19 +22,44 @@ const {
 
 
 useEffect(() => {
+
   getAllUsers()
+  
 }, [])
 
+const handleOpenform = () =>{
+  setisClose(false)
+  
+  
+}
 
   return (
     <div className="App">
-      <h1>Users</h1>
-      <div>
+      <header className='app_header'>
+      <h1 className='app__title'>Users</h1>
+      <button onClick={handleOpenform} className='app__Btn__create'>Create New User</button>
+      </header>
+      
+      <FormUsers
+        createNewUsers={createNewUsers}
+        updateInfo={updateInfo}
+        updateUserById={updateUserById}
+        setUpdateInfo={setUpdateInfo}
+        setisClose={setisClose}
+        isClose={isClose}
+
+
+        />
+      <div className='user__container'>
         {
           users?.map(user => (
               <UsersCard
               key={user.id}
               user={user}
+              deleteUserById={deleteUserById}
+              setUpdateInfo={setUpdateInfo}
+              setisClose={setisClose}
+              isClose={isClose}
 
               />
           ))
