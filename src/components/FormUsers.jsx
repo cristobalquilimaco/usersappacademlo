@@ -37,7 +37,7 @@ const submit = data => {
 
 const handleExit = () => {
   setisClose(true)
-  reset(defaultValues)
+  
 
   
 }
