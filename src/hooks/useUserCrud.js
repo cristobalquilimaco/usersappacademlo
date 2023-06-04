@@ -21,7 +21,7 @@ axios.get(`${url}/users`)
 
 
 //POST
-const createNewUsers = data => {
+const createNewUsers = (data) => {
     axios.post(`${url}/users`, data)
     .then(res => {
     console.log(res.data)

@@ -1,3 +1,3 @@
 export const URL_API = {
-    url: "https://my-crud-academlo.onrender.com/api/v1"
+    url: "https://my-crud-academlo.onrender.com/api/v1/"
 }
