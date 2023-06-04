@@ -29,6 +29,7 @@ useEffect(() => {
 
 const handleOpenform = () =>{
   setisClose(false)
+  reset(defaultValues)
   
   
 }
