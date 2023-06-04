@@ -1,12 +1,13 @@
 import axios from "axios"
 import { useState } from "react"
+import { URL_API } from "../../url"
 
 
 const useUserCrud = () => {
 
 const [users, setUsers] = useState()
 
-const url = "https://my-crud-academlo.onrender.com/api/v1"
+const url = URL_API.url
 
 //GET
 
