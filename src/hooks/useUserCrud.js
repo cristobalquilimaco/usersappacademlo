@@ -34,7 +34,7 @@ const createNewUsers = (data) => {
 //DELETE
 
 const deleteUserById = id => {
-    const urlDelete = `${url}/users${id}/`
+    const urlDelete = `${url}/users/${id}/`;
     axios.delete(urlDelete)
       .then(res => getAllUsers())
       .catch(err => console.log(err))
@@ -43,7 +43,7 @@ const deleteUserById = id => {
 //UPDATE
 
 const updateUserById = (id, data) => {
-    const urlUpdate = `${url}/users${id}/`
+    const urlUpdate = `${url}/users/${id}/`;
     axios.patch(urlUpdate, data)
     .then(res => getAllUsers())
     .catch(err => console.log(err))
